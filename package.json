@@ -1,0 +1,18 @@
+{
+  "name": "npmtesting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@thingssdk/ht16k33": "^1.0.1",
+    "apa102-spi": "0.0.3",
+    "node-bmp280": "^0.1.2",
+    "raspi": "^4.0.0",
+    "raspi-pwm": "^4.0.2"
+  }
+}

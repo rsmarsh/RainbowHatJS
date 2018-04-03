@@ -13,7 +13,7 @@ var startPiezo = function(frequency, length) {
 	piezoBuzzer.write(frequency); // 0.5 freq would be 50% Duty Cycle, aka half brightness
 	if (length) {
 		setTimeout(function() {
-			stopPiezo();
+			stopNote();
 		}, length);
 	}
 };

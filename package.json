@@ -11,8 +11,10 @@
   "dependencies": {
     "@thingssdk/ht16k33": "^1.0.1",
     "apa102-spi": "0.0.3",
+    "hooloovoo": "^1.0.7",
     "node-bmp280": "^0.1.2",
     "raspi": "^4.0.0",
-    "raspi-pwm": "^4.0.2"
+    "raspi-pwm": "^4.0.2",
+    "rpi-gpio": "^0.9.1"
   }
 }

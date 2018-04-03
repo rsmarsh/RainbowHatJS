@@ -1,18 +1,29 @@
-var RainbowLED = require('apa102-spi');
+var RainbowLED = require('hooloovoo');
 
-//if this doesn't work, look at https://github.com/jonnypage-d3/hooloovoo
 
-var ledDriver = new RainbowLED(6, 100);
-// ledDriver.setClearOnExit();
+RainbowLED.setup(7);
+RainbowLED.clear(); //the leds seem to light up incorrectly unless cleared prior to use
 
-var enable = function(lightNum) {
+var enable = function(lightNum, r, g, b) {
 	if (lightNum > 6 || lightNum < 0) {
 		console.error("attempted to light an invalid LED of: " + lightNum);
 		return;
 	}
-	 //(led num, brightness 0-31, red 0-255, green 0-255, blue 0-255)
-	ledDriver.setLedColor(lightNum,5,0,255,0);
-	ledDriver.sendLeds();
+
+	//default to red if a colour is not provided
+	if (isNaN(r)) { //undefined
+		r = 255;
+	}
+	if (isNaN(g)) {
+		g = 0;
+	}
+	if (isNaN(b)) {
+		b = 0;
+	}
+	
+	 //(led num, red 0-255, green 0-255, blue 0-255)
+	 RainbowLED.set_pixel_RGB(lightNum, r, g, b);
+	//  RainbowLED.sendLeds();
 };
 
 var disable = function(lightNum) {
@@ -26,17 +37,20 @@ var disable = function(lightNum) {
 };
 
 var enableAll = function() {
+	var lightNum;
 	for (var i = 0; i < 7; i++) {
-		ledDriver.setLedColor(i, 255, 0, 0, 200);
+		lightNum = i;
+		ledDriver.setLedColor(lightNum, 255, 0, 0, 200);
 	}
 	ledDriver.sendLeds();
 };
 
 var disableAll = function() {
-	for (var i = 0; i < 7; i++) {
-		ledDriver.setLedColor(i, 0, 0, 0, 0);
-	}
-	ledDriver.sendLeds();
+	// for (var i = 0; i < 7; i++) {
+	// 	ledDriver.setLedColor(i, 0, 0, 0, 0);
+	// }
+	// ledDriver.sendLeds();
+	RainbowLED.clear();
 };
 
 module.exports = {

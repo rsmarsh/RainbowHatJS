@@ -1,9 +1,9 @@
 //pull in the controlling functions for each sensor, each will be initiated within 
-var BarometerController 	= require('./controllers/BMP280.js');
+var BarometerController 	= require('./controllers/Barometer.js');
 var ButtonLEDController 	= require('./controllers/LEDButtons.js');
 var PiezoController 		= require('./controllers/Piezo.js');
 var RainbowLEDController 	= require('./controllers/RainbowLED.js');
-var SegmentLCDController 	= require('./controllers/SevenSegmentLCD.js');
+// var SegmentLCDController 	= require('./controllers/SevenSegmentLCD.js');
 //TODO: create touch button controller
 
 
@@ -21,5 +21,5 @@ module.exports = {
  	led:		ButtonLEDController,
  	piezo:		PiezoController,
  	rainbow:	RainbowLEDController,
- 	lcd:		SegmentLCDController
+ 	// lcd:		SegmentLCDController
 };

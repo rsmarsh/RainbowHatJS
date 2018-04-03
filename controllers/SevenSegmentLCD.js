@@ -1,7 +1,7 @@
-var SevenSegment = require('ht16k33-sevensegment-display');
+// var SevenSegment = require('@thingssdk/ht16k33-sevensegment-display');
 	
 //TODO replace with the following:
-// var _espruino = require('@thingssdk/ht16k33/espruino');
+var SevenSegment = require('@thingssdk/ht16k33/espruino');
 
 var segmentDisplay = new SevenSegment(0x70, 1);
 
